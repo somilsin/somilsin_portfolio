@@ -1,36 +1,24 @@
-import { useEffect, useRef, type ReactNode } from "react";
+import { motion } from "framer-motion";
+import type { ReactNode } from "react";
 
-interface Props {
+export function Reveal({
+  children,
+  delay = 0,
+  className,
+}: {
   children: ReactNode;
   delay?: number;
   className?: string;
-  as?: "div" | "section" | "article" | "li" | "header" | "footer";
-}
-
-export function Reveal({ children, delay = 0, className = "", as: Tag = "div" }: Props) {
-  const ref = useRef<HTMLElement | null>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            (e.target as HTMLElement).style.transitionDelay = `${delay}ms`;
-            e.target.classList.add("reveal-in");
-            obs.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [delay]);
+}) {
   return (
-    // @ts-expect-error dynamic tag
-    <Tag ref={ref} className={`reveal ${className}`}>
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay }}
+      className={className}
+    >
       {children}
-    </Tag>
+    </motion.div>
   );
 }
