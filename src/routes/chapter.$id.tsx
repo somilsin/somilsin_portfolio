@@ -140,7 +140,7 @@ function ChapterPage() {
             </div>
           ) : (
             <div style={{ display: "grid", gap: 1, background: "var(--rule)" }}>
-              {chapterEntries.map((e) => {
+              {chapterEntries.map((e: typeof entries[number]) => {
                 const isOpen = open === e.number;
                 return (
                   <button
