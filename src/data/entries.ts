@@ -11,20 +11,29 @@ export const entries: Entry[] = [
   {
     chapterId: "experience",
     number: 1,
-    total: 2,
+    total: 3,
     fact:
-      "Building agentic software at Oracle — RAG pipelines and context engineering for the Construction & Engineering GBU.",
+      "AI Research Intern at IISc Bangalore — Neural Radiance Fields (NeRF) for novel view synthesis from 2D images.",
     expansion:
-      "Associate Software Engineer working on full-stack AI/ML systems: applied agentic engineering, retrieval-augmented generation, and Oracle JET frontends with deep integration into OIC flows.",
+      "Worked on 3D computer vision research at the Indian Institute of Science, training NeRF-based pipelines to reconstruct complex scenes and explore differentiable rendering for view synthesis.",
   },
   {
     chapterId: "experience",
     number: 2,
-    total: 2,
+    total: 3,
     fact:
-      "Shipped reusable JET components and integration tests that became part of the team's permanent toolbox during a 6-month internship.",
+      "Full-Stack & AI Engineer at Oracle — RAG pipelines, agentic systems, and Oracle JET components for the Construction & Engineering GBU.",
     expansion:
-      "Software Engineering Intern at Oracle (2023–2024). Owned component features, wrote integration tests, and contributed automation to developer workflows before converting to full-time.",
+      "Associate Software Engineer working on full-stack AI/ML systems: applied agentic engineering, retrieval-augmented generation, context engineering, and Oracle JET frontends integrated into OIC flows.",
+  },
+  {
+    chapterId: "experience",
+    number: 3,
+    total: 3,
+    fact:
+      "Incoming MS in AI Systems at Carnegie Mellon University — next chapter, deeper research in agentic and embodied AI.",
+    expansion:
+      "Joining CMU's AI Systems program to push further into agentic architectures, world models, and applied machine learning research.",
   },
   // Projects
   {
