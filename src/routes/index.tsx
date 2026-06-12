@@ -6,6 +6,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { Hero } from "@/components/Hero";
 import { StatusBar } from "@/components/StatusBar";
 import { ChaptersGallery } from "@/components/ChaptersGallery";
+import { ResearchProjects } from "@/components/ResearchProjects";
 import { PhoneMockup } from "@/components/PhoneMockup";
 import { MethodologySection } from "@/components/MethodologySection";
 import { EntryLog } from "@/components/EntryLog";
@@ -43,6 +44,7 @@ function Index() {
       <main>
         <Hero />
         <ChaptersGallery />
+        <ResearchProjects />
         <PhoneMockup />
         <MethodologySection />
         <EntryLog />
