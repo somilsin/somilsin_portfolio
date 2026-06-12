@@ -44,6 +44,7 @@ function Index() {
       <main>
         <Hero />
         <ChaptersGallery />
+        <ResearchProjects />
         <PhoneMockup />
         <MethodologySection />
         <EntryLog />
