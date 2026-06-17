@@ -14,12 +14,12 @@ export const chapters: Chapter[] = [
   {
     id: "experience",
     roman: "I",
-    title: "Experience at Oracle",
+    title: "Experience",
     status: "open",
-    entry: 2,
-    total: 2,
+    entry: 7,
+    total: 7,
     description:
-      "Associate Software Engineer in Oracle's Construction & Engineering GBU. Building agentic systems, RAG pipelines, and full-stack AI/ML features for enterprise-grade products.",
+      "Full Stack AI-ML Developer at Oracle. Prior research at IISc Bangalore (NeRF) and Samsung R&D (video frame synthesis), plus AI/CV internships at Wipro PARI and Solar Secure.",
   },
   {
     id: "projects",
@@ -29,11 +29,21 @@ export const chapters: Chapter[] = [
     entry: 5,
     total: 5,
     description:
-      "Cyber-security recon tools, YOLOv4 object tracking, ANPR for Indian vehicles, Fashion-MNIST CNNs, and RFID smart parking. Hardware to deep learning, all hand-built.",
+      "Computer vision first: YOLOv4 object tracking with boundary-edge detection, ANPR for Indian vehicles, Fashion-MNIST CNN classification — then cyber-security recon and RFID smart parking.",
+  },
+  {
+    id: "certifications",
+    roman: "III",
+    title: "Certifications",
+    status: "open",
+    entry: 7,
+    total: 7,
+    description:
+      "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional, OCI Foundations & AI Foundations Associates, TDD for Java, TensorFlow Deep Learning, Python for DS/ML.",
   },
   {
     id: "education",
-    roman: "III",
+    roman: "IV",
     title: "Education & Test Scores",
     status: "archived",
     entry: 3,
@@ -43,32 +53,32 @@ export const chapters: Chapter[] = [
   },
   {
     id: "honors",
-    roman: "IV",
+    roman: "V",
     title: "Honors & Awards",
     status: "archived",
-    entry: 25,
-    total: 25,
+    entry: 4,
+    total: 4,
     description:
-      "International ELO 1340 in Chess. 8th place Maharashtra State U-8. NTSE merit scholar. MaRRS Spelling Bee state finalist. 25+ chess medals from inter-school to national circuits.",
+      "International ELO 1340 in chess, 8th in Maharashtra State U-8, NTSE merit scholar, MaRRS Spelling Bee state finalist, Badminton DSO 4th in Mumbai.",
   },
   {
     id: "volunteering",
-    roman: "V",
+    roman: "VI",
     title: "Volunteering & Satellites",
     status: "archived",
     entry: 2,
     total: 2,
     description:
-      "Core Electronics Engineer on Team Antariksh — RVSAT1, India's first student-built satellite carrying a microbiological payload. Design Team Member, NSS RVCE.",
+      "Core Electronics Engineer on Team Antariksh — RVSAT1, India's first student-built satellite. Design Team, NSS RVCE.",
   },
   {
     id: "beyond",
-    roman: "VI",
+    roman: "VII",
     title: "Beyond the Terminal",
     status: "open",
-    entry: 4,
-    total: 4,
+    entry: 3,
+    total: 3,
     description:
-      "State-level footballer. Badminton DSO 4th place. Guitarist. Astronomy quiz winner. A relentless interest in space, agentic AI, and how civilisations think.",
+      "State-level footballer & captain. Astronomy quiz winner. Performing guitarist.",
   },
 ];
