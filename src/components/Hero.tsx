@@ -94,10 +94,10 @@ export function Hero() {
           }}
         >
           <motion.div variants={lineReveal} initial="hidden" animate="show" custom={0.3} style={{ color: "var(--cream)" }}>
-            Agentic Systems,
+            Computer Vision,
           </motion.div>
           <motion.div variants={lineReveal} initial="hidden" animate="show" custom={0.55} style={{ color: "var(--mist)" }}>
-            Computer Vision World Models,
+            Agentic Systems &amp; World Models,
           </motion.div>
           <motion.div
             variants={lineReveal}
@@ -117,7 +117,7 @@ export function Hero() {
               color: "transparent",
             }}
           >
-            &amp; Deep Learning Enthusiast.
+            engineered end-to-end.
           </motion.div>
         </h1>
 
@@ -130,16 +130,18 @@ export function Hero() {
             color: "var(--mist)",
             fontSize: 16,
             lineHeight: 1.7,
-            maxWidth: 760,
+            maxWidth: 780,
             fontFamily: "var(--font-sans, 'DM Sans', system-ui, sans-serif)",
           }}
         >
-          Incoming MS in AI Systems at <span style={{ color: "var(--cream)" }}>Carnegie Mellon University</span>.
-          Full-Stack and AI Engineer at <span style={{ color: "var(--cream)" }}>Oracle</span>. Builder of Neural Radiance
-          Fields (NeRF) for novel view synthesis, autonomous deep space navigation algorithms, and advanced RAG
-          pipelines. Researcher published in the classification and tracking of everyday common objects. State-level
-          footballer, international chess player (1430 ELO), and guitarist.
+          Full Stack AI-ML Developer at <span style={{ color: "var(--cream)" }}>Oracle</span>, architecting
+          agentic multi-agent systems over MCP and high-throughput RAG pipelines. Computer Vision researcher —
+          <span style={{ color: "var(--cream)" }}> Neural Radiance Fields at IISc Bangalore</span>, video frame
+          synthesis at <span style={{ color: "var(--cream)" }}>Samsung R&amp;D</span>, and SSD + FPN object
+          detection for autonomous driving at <span style={{ color: "var(--cream)" }}>Wipro PARI</span>.
+          Published author on YOLOv4 object tracking. State-level footballer, 1340-ELO chess player, guitarist.
         </motion.p>
+
 
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}

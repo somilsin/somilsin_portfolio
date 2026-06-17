@@ -120,6 +120,8 @@ html, body {
   transform: translate3d(0, 0, 0);
   filter: blur(0);
 }
+.reveal:focus-within { opacity: 1; transform: none; filter: none; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; filter: none; transition: none; }
 }
+
