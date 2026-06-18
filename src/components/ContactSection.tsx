@@ -4,7 +4,7 @@ import { Copy, Check, Mail, Github, Linkedin, Send } from "lucide-react";
 import { Nebula } from "./Nebula";
 import { Reveal } from "./Reveal";
 
-const EMAIL = "somilsingh1812@gmail.com";
+const EMAIL = "somils@andrew.cmu.edu";
 
 const channels = [
   { icon: Mail, label: "Email", value: EMAIL, href: `mailto:${EMAIL}` },
