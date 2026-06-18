@@ -37,7 +37,7 @@ export function StatusBar() {
         <span style={{ color: "var(--nebula-cyan)" }}>UPLINK ACTIVE</span>
       </div>
       <a
-        href="mailto:somilsingh1812@gmail.com"
+        href="mailto:somils@andrew.cmu.edu"
         className="label-mono hidden md:block"
         style={{ color: "var(--nebula-cyan)", flex: 1, textAlign: "right" }}
       >
