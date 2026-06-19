@@ -134,12 +134,11 @@ export function Hero() {
             fontFamily: "var(--font-sans, 'DM Sans', system-ui, sans-serif)",
           }}
         >
-          Full Stack AI-ML Developer at <span style={{ color: "var(--cream)" }}>Oracle</span>, architecting
-          agentic multi-agent systems over MCP and high-throughput RAG pipelines. Computer Vision researcher —
-          <span style={{ color: "var(--cream)" }}> Neural Radiance Fields at IISc Bangalore</span>, video frame
-          synthesis at <span style={{ color: "var(--cream)" }}>Samsung R&amp;D</span>, and SSD + FPN object
-          detection for autonomous driving at <span style={{ color: "var(--cream)" }}>Wipro PARI</span>.
-          Published author on YOLOv4 object tracking. State-level footballer, 1340-ELO chess player, guitarist.
+          <span style={{ color: "var(--cream)" }}>Core Systems:</span> Architecting end to end agentic multi agent frameworks, MCP integrations and high throughput RAG pipelines at Oracle.
+          <br /><br />
+          <span style={{ color: "var(--cream)" }}>Perception Research:</span> Advanced CV research covering Neural Radiance Fields (IISc), video frame synthesis (Samsung R&amp;D) and SSD/FPN object detection for autonomous driving. Published author on YOLOv4 tracking systems.
+          <br /><br />
+          <span style={{ color: "var(--cream)" }}>Personal Pursuits:</span> State level footballer, 1340 ELO chess player and guitarist.
         </motion.p>
 
 
