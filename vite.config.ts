@@ -7,6 +7,13 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  // Without this, the nitro plugin only runs inside Lovable's own dev sandbox.
+  // On any other host (Vercel, etc.) it gets silently skipped, the build has
+  // no server output, and every route 404s. `nitro: true` forces it on
+  // everywhere; the actual deploy target (Vercel, Cloudflare, etc.) is still
+  // auto-detected at build time via env vars, so this doesn't lock you to Cloudflare.
+ 
+  nitro: true,
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
