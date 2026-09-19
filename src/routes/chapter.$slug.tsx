@@ -84,7 +84,8 @@ function ChapterPage() {
               <div className="flex flex-wrap items-baseline justify-between gap-4">
                 <div>
                   <p className="hud-text mb-2 text-[color:var(--color-neon)]">
-                    ENTRY {String(i + 1).padStart(3, "0")} / {String(chapter.entries.length).padStart(3, "0")}
+                    ENTRY {String(i + 1).padStart(3, "0")} /{" "}
+                    {String(chapter.entries.length).padStart(3, "0")}
                   </p>
                   <h3 className="font-[family-name:var(--font-display)] text-2xl font-semibold">
                     {e.title}
@@ -106,7 +107,10 @@ function ChapterPage() {
 
       <section className="relative px-6 pb-32 md:px-10">
         <div className="mx-auto flex max-w-5xl items-center justify-between border-t border-[color:var(--color-border)] pt-10">
-          <Link to="/" className="hud-text text-[color:var(--color-cyan-soft)] hover:text-[color:var(--color-neon)]">
+          <Link
+            to="/"
+            className="hud-text text-[color:var(--color-cyan-soft)] hover:text-[color:var(--color-neon)]"
+          >
             ← All chapters
           </Link>
           <Link

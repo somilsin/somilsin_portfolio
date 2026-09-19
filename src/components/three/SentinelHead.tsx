@@ -135,7 +135,11 @@ export function SentinelHead() {
       <Canvas
         dpr={lowPower ? [1, 1.2] : [1, 1.6]}
         camera={{ position: [0, 0, 3.6], fov: 45 }}
-        gl={{ antialias: !lowPower, alpha: true, powerPreference: lowPower ? "low-power" : "high-performance" }}
+        gl={{
+          antialias: !lowPower,
+          alpha: true,
+          powerPreference: lowPower ? "low-power" : "high-performance",
+        }}
       >
         <ambientLight intensity={0.5} />
         <pointLight position={[2, 2, 3]} intensity={1.2} color="#00e5ff" />

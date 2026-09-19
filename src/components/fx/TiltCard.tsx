@@ -1,6 +1,12 @@
 import { useRef, type ReactNode, type PointerEvent as RPointerEvent } from "react";
 
-export function TiltCard({ children, className = "" }: { children: ReactNode; className?: string }) {
+export function TiltCard({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   const onMove = (e: RPointerEvent<HTMLDivElement>) => {

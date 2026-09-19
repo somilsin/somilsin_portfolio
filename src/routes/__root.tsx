@@ -85,7 +85,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Portfolio of Somil Singh — Full-Stack AI-ML Developer at Oracle. NeRF, agentic multi-agent systems, MCP, RAG, and end-to-end computer vision.",
       },
       { name: "author", content: "Somil Singh" },
-      { property: "og:title", content: "Somil Singh — Computer Vision, Agentic Systems & World Models" },
+      {
+        property: "og:title",
+        content: "Somil Singh — Computer Vision, Agentic Systems & World Models",
+      },
       {
         property: "og:description",
         content:
@@ -94,10 +97,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@somilsin" },
-      { name: "twitter:title", content: "Somil Singh — Computer Vision, Agentic Systems & World Models" },
-      { name: "twitter:description", content: "Portfolio of Somil Singh — Full-Stack AI-ML Developer at Oracle. NeRF, agentic multi-agent systems, MCP, RAG, and end-to-end computer vision." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/57eaf69d-ec9d-404d-8c08-ffa64dbcd12c" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/57eaf69d-ec9d-404d-8c08-ffa64dbcd12c" },
+      {
+        name: "twitter:title",
+        content: "Somil Singh — Computer Vision, Agentic Systems & World Models",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Portfolio of Somil Singh — Full-Stack AI-ML Developer at Oracle. NeRF, agentic multi-agent systems, MCP, RAG, and end-to-end computer vision.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/57eaf69d-ec9d-404d-8c08-ffa64dbcd12c",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/57eaf69d-ec9d-404d-8c08-ffa64dbcd12c",
+      },
     ],
     links: [
       {

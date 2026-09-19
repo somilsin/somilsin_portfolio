@@ -2,19 +2,31 @@ import { useEffect, useRef, useState } from "react";
 import portraitSrc from "@/assets/portrait-source.jpg";
 
 type Particle = {
-  x: number; y: number; ox: number; oy: number;
-  vx: number; vy: number; r: number; c: string;
+  x: number;
+  y: number;
+  ox: number;
+  oy: number;
+  vx: number;
+  vy: number;
+  r: number;
+  c: string;
 };
 
 type Ambient = {
-  x: number; y: number; vx: number; vy: number; r: number; c: string; a: number;
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  r: number;
+  c: string;
+  a: number;
 };
 
 type FxSettings = {
-  quality: number;      // 0.5 – 1.25 particle density multiplier
-  warp: number;         // 0.4 – 2.0 black-hole strength
-  fpsCap: number;       // 30 | 60 | 120
-  ambient: boolean;     // ambient starfield on/off
+  quality: number; // 0.5 – 1.25 particle density multiplier
+  warp: number; // 0.4 – 2.0 black-hole strength
+  fpsCap: number; // 30 | 60 | 120
+  ambient: boolean; // ambient starfield on/off
   showPanel: boolean;
 };
 
@@ -57,7 +69,12 @@ export default function ParticleHead() {
       // Storage unavailable (e.g. private mode): settings just won't persist.
     }
   }, [fx]);
-  const [stats, setStats] = useState<DebugStats>({ fps: 0, adapt: 1, running: true, reason: "running" });
+  const [stats, setStats] = useState<DebugStats>({
+    fps: 0,
+    adapt: 1,
+    running: true,
+    reason: "running",
+  });
   const statsRef = useRef(stats);
   statsRef.current = stats;
 
@@ -74,7 +91,8 @@ export default function ParticleHead() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     // adaptive quality applied on top of user quality
     let adapt = 1;
-    let W = 0, H = 0;
+    let W = 0,
+      H = 0;
     let particles: Particle[] = [];
     let ambient: Ambient[] = [];
     let raf = 0;
@@ -92,9 +110,12 @@ export default function ParticleHead() {
 
     const sample = () => {
       const rect = wrap.getBoundingClientRect();
-      W = rect.width; H = rect.height;
-      canvas.width = W * dpr; canvas.height = H * dpr;
-      canvas.style.width = W + "px"; canvas.style.height = H + "px";
+      W = rect.width;
+      H = rect.height;
+      canvas.width = W * dpr;
+      canvas.height = H * dpr;
+      canvas.style.width = W + "px";
+      canvas.style.height = H + "px";
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       // Portrait positioned toward the right (reference lobod.rocks layout).
@@ -126,7 +147,9 @@ export default function ParticleHead() {
       for (let y = 0; y < off.height; y += step) {
         for (let x = 0; x < off.width; x += step) {
           const i = (y * off.width + x) * 4;
-          const r = data[i], g = data[i + 1], b = data[i + 2];
+          const r = data[i],
+            g = data[i + 1],
+            b = data[i + 2];
           const bright = (r * 0.299 + g * 0.587 + b * 0.114) / 255;
           if (bright > 0.94) continue;
           const density = 1 - bright;
@@ -140,8 +163,10 @@ export default function ParticleHead() {
           pts.push({
             x: px + (Math.random() - 0.5) * 24,
             y: py + (Math.random() - 0.5) * 24,
-            ox: px, oy: py,
-            vx: 0, vy: 0,
+            ox: px,
+            oy: py,
+            vx: 0,
+            vy: 0,
             r: size,
             c: `hsl(${hue} 70% ${light}%)`,
           });
@@ -168,7 +193,9 @@ export default function ParticleHead() {
       ambient = amb;
     };
 
-    const onResize = () => { if (img.complete) sample(); };
+    const onResize = () => {
+      if (img.complete) sample();
+    };
     const setPointer = (clientX: number, clientY: number) => {
       const rect = wrap.getBoundingClientRect();
       mouse.x = clientX - rect.left;
@@ -183,7 +210,11 @@ export default function ParticleHead() {
       const t = e.touches[0];
       setPointer(t.clientX, t.clientY);
     };
-    const onLeave = () => { mouse.active = false; mouse.x = -9999; mouse.y = -9999; };
+    const onLeave = () => {
+      mouse.active = false;
+      mouse.x = -9999;
+      mouse.y = -9999;
+    };
     const onScroll = () => {
       const rect = wrap.getBoundingClientRect();
       const h = Math.max(1, rect.height);
@@ -211,7 +242,8 @@ export default function ParticleHead() {
       frames++;
       if (acc >= 1000) {
         const fps = (frames * 1000) / acc;
-        acc = 0; frames = 0;
+        acc = 0;
+        frames = 0;
         const target = Math.min(cap, 60);
         if (fps < target * 0.7 && adapt > 0.5 && now - lastShiftAt > 2000) {
           adapt = Math.max(0.5, adapt - 0.25);
@@ -229,7 +261,7 @@ export default function ParticleHead() {
             fps: nextFps,
             adapt,
             running,
-            reason: running ? "running" : (!visible ? "hidden" : "offscreen"),
+            reason: running ? "running" : !visible ? "hidden" : "offscreen",
           });
         }
       }
@@ -246,7 +278,8 @@ export default function ParticleHead() {
       const warp = fxRef.current.warp;
       const repelR = Math.max(180, Math.min(W, H) * 0.32) * (0.75 + warp * 0.35);
       const repelR2 = repelR * repelR;
-      const cx = W / 2, cy = H / 2;
+      const cx = W / 2,
+        cy = H / 2;
 
       // Ambient layer (behind portrait particles)
       if (fxRef.current.ambient) {
@@ -299,7 +332,8 @@ export default function ParticleHead() {
         }
         if (sw > 0.001) {
           // Scroll-warped ambient swirl around portrait center
-          const rx = p.ox - cx, ry = p.oy - cy;
+          const rx = p.ox - cx,
+            ry = p.oy - cy;
           p.vx += -ry * 0.0008 * scrollTwist;
           p.vy += rx * 0.0008 * scrollTwist;
         }
@@ -325,8 +359,7 @@ export default function ParticleHead() {
       const tx = (gm.x - 0.5) * 26;
       const ty = (0.5 - gm.y) * 18 - sw * 40;
       const sc = 1 - sw * 0.08;
-      tilt.style.transform =
-        `perspective(1200px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) translate3d(${tx.toFixed(2)}px, ${ty.toFixed(2)}px, 0) scale(${sc.toFixed(3)})`;
+      tilt.style.transform = `perspective(1200px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) translate3d(${tx.toFixed(2)}px, ${ty.toFixed(2)}px, 0) scale(${sc.toFixed(3)})`;
       tilt.style.opacity = String(1 - sw * 0.55);
     };
 
@@ -342,7 +375,11 @@ export default function ParticleHead() {
         inView = entries[0]?.isIntersecting ?? true;
         running = inView && visible;
         lastT = performance.now();
-        setStats((s) => ({ ...s, running, reason: running ? "running" : (!visible ? "hidden" : "offscreen") }));
+        setStats((s) => ({
+          ...s,
+          running,
+          reason: running ? "running" : !visible ? "hidden" : "offscreen",
+        }));
       },
       { threshold: 0.01 },
     );
@@ -351,7 +388,11 @@ export default function ParticleHead() {
       visible = document.visibilityState !== "hidden";
       running = inView && visible;
       lastT = performance.now();
-      setStats((s) => ({ ...s, running, reason: running ? "running" : (!visible ? "hidden" : "offscreen") }));
+      setStats((s) => ({
+        ...s,
+        running,
+        reason: running ? "running" : !visible ? "hidden" : "offscreen",
+      }));
     };
 
     window.addEventListener("resize", onResize);
@@ -379,7 +420,11 @@ export default function ParticleHead() {
 
   return (
     <>
-      <div ref={wrapRef} className="pointer-events-none absolute inset-0" style={{ perspective: "1200px" }}>
+      <div
+        ref={wrapRef}
+        className="pointer-events-none absolute inset-0"
+        style={{ perspective: "1200px" }}
+      >
         <div
           ref={tiltRef}
           className="absolute inset-0 will-change-transform"
@@ -395,9 +440,7 @@ export default function ParticleHead() {
 }
 
 function DebugHud({ stats }: { stats: DebugStats }) {
-  const color =
-    stats.fps >= 55 ? "var(--color-primary)" :
-    stats.fps >= 30 ? "#e6c07b" : "#ff6b6b";
+  const color = stats.fps >= 55 ? "var(--color-primary)" : stats.fps >= 30 ? "#e6c07b" : "#ff6b6b";
   return (
     <div className="pointer-events-none fixed bottom-4 left-4 z-50 rounded-sm border border-[color:var(--color-foreground)]/15 bg-[color:var(--color-background)]/70 px-3 py-2 font-mono text-[10px] uppercase tracking-widest backdrop-blur">
       <div className="flex items-center gap-3">
@@ -429,14 +472,22 @@ function FxPanel({ fx, setFx }: { fx: FxSettings; setFx: (f: FxSettings) => void
           </div>
           <Row label={`Quality ${fx.quality.toFixed(2)}`}>
             <input
-              type="range" min={0.5} max={1.25} step={0.05} value={fx.quality}
+              type="range"
+              min={0.5}
+              max={1.25}
+              step={0.05}
+              value={fx.quality}
               onChange={(e) => setFx({ ...fx, quality: Number(e.target.value) })}
               className="w-full"
             />
           </Row>
           <Row label={`Warp ${fx.warp.toFixed(2)}`}>
             <input
-              type="range" min={0.4} max={2} step={0.05} value={fx.warp}
+              type="range"
+              min={0.4}
+              max={2}
+              step={0.05}
+              value={fx.warp}
               onChange={(e) => setFx({ ...fx, warp: Number(e.target.value) })}
               className="w-full"
             />
@@ -460,7 +511,8 @@ function FxPanel({ fx, setFx }: { fx: FxSettings; setFx: (f: FxSettings) => void
           </Row>
           <label className="mt-2 flex items-center gap-2 opacity-80">
             <input
-              type="checkbox" checked={fx.ambient}
+              type="checkbox"
+              checked={fx.ambient}
               onChange={(e) => setFx({ ...fx, ambient: e.target.checked })}
             />
             Ambient field

@@ -158,7 +158,8 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  html, body {
+  html,
+  body {
     background:
       radial-gradient(1400px 900px at 85% 55%, oklch(0.32 0.06 55 / 0.35), transparent 65%),
       radial-gradient(900px 700px at 10% 10%, oklch(0.22 0.03 60 / 0.5), transparent 60%),
@@ -227,47 +228,104 @@
 }
 
 @keyframes flicker {
-  0%, 100% { opacity: 1; }
-  47% { opacity: 1; }
-  48% { opacity: 0.4; }
-  49% { opacity: 1; }
-  85% { opacity: 1; }
-  86% { opacity: 0.6; }
-  87% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  47% {
+    opacity: 1;
+  }
+  48% {
+    opacity: 0.4;
+  }
+  49% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  86% {
+    opacity: 0.6;
+  }
+  87% {
+    opacity: 1;
+  }
 }
 @keyframes drift {
-  0% { transform: translate3d(0,0,0); }
-  50% { transform: translate3d(0,-6px,0); }
-  100% { transform: translate3d(0,0,0); }
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
 }
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 @keyframes gridsweep {
-  0% { background-position: 0 0, 0 0; }
-  100% { background-position: 40px 40px, 40px 40px; }
+  0% {
+    background-position:
+      0 0,
+      0 0;
+  }
+  100% {
+    background-position:
+      40px 40px,
+      40px 40px;
+  }
 }
 
-.animate-flicker { animation: flicker 6s infinite; }
-.animate-drift { animation: drift 6s ease-in-out infinite; }
-.animate-marquee { animation: marquee 40s linear infinite; }
+.animate-flicker {
+  animation: flicker 6s infinite;
+}
+.animate-drift {
+  animation: drift 6s ease-in-out infinite;
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
 
 /* Page-load + scroll-in reveals with smooth easing */
 @keyframes reveal-up {
-  0% { opacity: 0; transform: translate3d(0, 24px, 0); filter: blur(6px); }
-  100% { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
 }
 @keyframes page-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.page-in { animation: page-in 900ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.page-in {
+  animation: page-in 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
 
 .reveal {
   opacity: 0;
@@ -305,7 +363,10 @@
 }
 
 @media (min-width: 768px) {
-  .prose-editorial { font-size: 16px; line-height: 1.75; }
+  .prose-editorial {
+    font-size: 16px;
+    line-height: 1.75;
+  }
 }
 
 /* Small-screen serif rhythm — tighter margins, taller line, breathing italics */
@@ -335,25 +396,42 @@
   .reveal,
   .animate-flicker,
   .animate-drift,
-  .animate-marquee { animation: none !important; transition: none !important; }
-  .reveal { opacity: 1; transform: none; filter: none; }
+  .animate-marquee {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
 }
 
 .grid-floor {
   background-image:
-    linear-gradient(to right, color-mix(in oklab, var(--color-neon) 12%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklab, var(--color-neon) 12%, transparent) 1px, transparent 1px);
+    linear-gradient(
+      to right,
+      color-mix(in oklab, var(--color-neon) 12%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--color-neon) 12%, transparent) 1px,
+      transparent 1px
+    );
   background-size: 40px 40px;
   animation: gridsweep 8s linear infinite;
   mask-image: linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
 }
 
 .text-shimmer {
-  background: linear-gradient(90deg,
+  background: linear-gradient(
+    90deg,
     color-mix(in oklab, var(--color-neon) 90%, white) 0%,
     white 30%,
     color-mix(in oklab, var(--color-magenta) 90%, white) 60%,
-    color-mix(in oklab, var(--color-neon) 90%, white) 100%);
+    color-mix(in oklab, var(--color-neon) 90%, white) 100%
+  );
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;

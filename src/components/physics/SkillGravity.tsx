@@ -28,7 +28,8 @@ export function SkillGravity({ words }: { words: string[] }) {
     const rect = container.getBoundingClientRect();
     const W = rect.width;
     const H = rect.height;
-    const isMobile = W < 640 || (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches);
+    const isMobile =
+      W < 640 || (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches);
 
     const engine = Matter.Engine.create({ gravity: { x: 0, y: 0.35 } });
     const world = engine.world;
@@ -129,7 +130,7 @@ export function SkillGravity({ words }: { words: string[] }) {
         }
         // Gentle wind so things keep drifting when idle
         Matter.Body.applyForce(b, b.position, {
-          x: (Math.sin(engine.timing.timestamp / 700 + b.id) * 0.00015),
+          x: Math.sin(engine.timing.timestamp / 700 + b.id) * 0.00015,
           y: 0,
         });
       }

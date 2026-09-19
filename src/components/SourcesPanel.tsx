@@ -12,7 +12,11 @@ import {
 
 function fmt(iso?: string) {
   if (!iso) return "—";
-  return new Date(iso).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+  return new Date(iso).toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
 }
 
 function download(filename: string, mime: string, content: string) {
@@ -77,7 +81,8 @@ export default function SourcesPanel() {
     });
   }, [query, activeTags]);
 
-  const exportRows = () => buildExportRows(typeof window !== "undefined" ? window.location.origin : "");
+  const exportRows = () =>
+    buildExportRows(typeof window !== "undefined" ? window.location.origin : "");
 
   const btn =
     "inline-flex items-center gap-3 rounded-sm border border-[color:var(--color-foreground)]/25 px-5 py-3 eyebrow transition-all hover:border-[color:var(--color-primary)] hover:text-[color:var(--color-primary)] disabled:opacity-50";
@@ -90,31 +95,48 @@ export default function SourcesPanel() {
             Every claim, <em className="text-[color:var(--color-primary)]">sourced</em>.
           </h2>
           <p className="reveal prose-editorial mt-6 max-w-xl" data-reveal-delay="100">
-            Each statement on this page maps to a public repository, a DOI, or the exact CV section it comes from.
-            Repository facts below are fetched live from the GitHub API.
+            Each statement on this page maps to a public repository, a DOI, or the exact CV section
+            it comes from. Repository facts below are fetched live from the GitHub API.
           </p>
         </div>
 
         <div className="reveal flex flex-col items-start gap-3" data-reveal-delay="160">
           <div className="flex flex-wrap gap-2">
-            <button type="button" onClick={() => void refresh()} disabled={state === "loading"} className={btn}>
+            <button
+              type="button"
+              onClick={() => void refresh()}
+              disabled={state === "loading"}
+              className={btn}
+            >
               <span
                 className={`h-2 w-2 rounded-full ${
                   state === "error" ? "bg-red-400" : "bg-[color:var(--color-primary)]"
                 } ${state === "loading" ? "animate-ping" : ""}`}
               />
-              {state === "loading" ? "Refreshing…" : state === "error" ? "Retry refresh" : "Refresh from GitHub"}
+              {state === "loading"
+                ? "Refreshing…"
+                : state === "error"
+                  ? "Retry refresh"
+                  : "Refresh from GitHub"}
             </button>
             <button
               type="button"
-              onClick={() => download("somil-verified-sources.json", "application/json", JSON.stringify(exportRows(), null, 2))}
+              onClick={() =>
+                download(
+                  "somil-verified-sources.json",
+                  "application/json",
+                  JSON.stringify(exportRows(), null, 2),
+                )
+              }
               className={btn}
             >
               Export JSON
             </button>
             <button
               type="button"
-              onClick={() => download("somil-verified-sources.csv", "text/csv", rowsToCsv(exportRows()))}
+              onClick={() =>
+                download("somil-verified-sources.csv", "text/csv", rowsToCsv(exportRows()))
+              }
               className={btn}
             >
               Export CSV
@@ -183,21 +205,32 @@ export default function SourcesPanel() {
 
       <div className="mt-10 divide-y divide-[color:var(--color-border)] border-t border-[color:var(--color-border)]">
         {filtered.length === 0 && (
-          <p className="py-10 text-sm text-[color:var(--color-foreground)]/55">No claims match that filter.</p>
+          <p className="py-10 text-sm text-[color:var(--color-foreground)]/55">
+            No claims match that filter.
+          </p>
         )}
         {filtered.map((s, i) => {
           const fact = s.repo ? facts[s.repo.toLowerCase()] : undefined;
           const href = evidenceUrl(s);
           return (
-            <article key={s.claim} className="reveal grid gap-6 py-8 md:grid-cols-12" data-reveal-delay={Math.min(i, 6) * 60}>
+            <article
+              key={s.claim}
+              className="reveal grid gap-6 py-8 md:grid-cols-12"
+              data-reveal-delay={Math.min(i, 6) * 60}
+            >
               <div className="md:col-span-2">
                 <p className="eyebrow text-[color:var(--color-foreground)]/60">{s.section}</p>
               </div>
               <div className="md:col-span-6">
-                <p className="max-w-2xl text-[15px] leading-relaxed text-[color:var(--color-foreground)]/85">{s.claim}</p>
+                <p className="max-w-2xl text-[15px] leading-relaxed text-[color:var(--color-foreground)]/85">
+                  {s.claim}
+                </p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {tagsFor(s).map((t) => (
-                    <span key={t} className="text-[10px] uppercase tracking-[0.14em] text-[color:var(--color-foreground)]/35">
+                    <span
+                      key={t}
+                      className="text-[10px] uppercase tracking-[0.14em] text-[color:var(--color-foreground)]/35"
+                    >
                       #{t}
                     </span>
                   ))}

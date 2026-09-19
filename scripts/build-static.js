@@ -33,7 +33,6 @@ function copy404() {
   }
 }
 
-
 function addCname() {
   // If a custom domain is configured via GH_PAGES_CNAME, write a CNAME file.
   const cname = process.env["GH_PAGES_CNAME"];
@@ -47,7 +46,6 @@ function addNoJekyll() {
   // Prevent GitHub Pages from running Jekyll on the static files.
   fs.writeFileSync(path.join(clientDir, ".nojekyll"), "");
 }
-
 
 function main() {
   console.log("Building static site for GitHub Pages with base:", basePath);

@@ -148,7 +148,14 @@ function ParticleField({ count = 900 }: { count?: number }) {
   });
   return (
     <Points ref={ref} positions={positions} stride={3}>
-      <PointMaterial size={0.02} color="#7dd3fc" transparent opacity={0.7} sizeAttenuation depthWrite={false} />
+      <PointMaterial
+        size={0.02}
+        color="#7dd3fc"
+        transparent
+        opacity={0.7}
+        sizeAttenuation
+        depthWrite={false}
+      />
     </Points>
   );
 }
@@ -181,7 +188,11 @@ export function RobotHead() {
       <Canvas
         dpr={lowPower ? [1, 1.2] : [1, 1.8]}
         camera={{ position: [0, 0, 8.5], fov: 40 }}
-        gl={{ antialias: !lowPower, alpha: true, powerPreference: lowPower ? "low-power" : "high-performance" }}
+        gl={{
+          antialias: !lowPower,
+          alpha: true,
+          powerPreference: lowPower ? "low-power" : "high-performance",
+        }}
         frameloop={reduced ? "demand" : "always"}
       >
         <ambientLight intensity={0.4 + hover * 0.3} />
@@ -192,7 +203,12 @@ export function RobotHead() {
         {!lowPower && <ParticleField count={lowPower ? 300 : 900} />}
         {!lowPower && (
           <EffectComposer>
-            <Bloom intensity={1.1 + hover * 0.8} luminanceThreshold={0.15} luminanceSmoothing={0.4} mipmapBlur />
+            <Bloom
+              intensity={1.1 + hover * 0.8}
+              luminanceThreshold={0.15}
+              luminanceSmoothing={0.4}
+              mipmapBlur
+            />
           </EffectComposer>
         )}
       </Canvas>

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import ParticleHead from "@/components/fx/ParticleHead";
 import SourcesPanel from "@/components/SourcesPanel";
 
-
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
@@ -34,7 +33,6 @@ const NAV = [
   { id: "sources", label: "Sources" },
   { id: "contact", label: "Contact" },
 ];
-
 
 const METRICS = [
   { value: "150–200", label: "bugs triaged autonomously / week at Oracle" },
@@ -75,7 +73,10 @@ const EXPERIENCE = [
       "Solo-architected a functional AI behavioural-change product in a 2-hour sprint, scoped for 10,000 employees.",
       "Won the hackathon and secured corporate interest for enterprise rollout after a live executive defence.",
     ],
-    link: { label: "github.com/somilsin/behaviorai-lovexai ↗", href: "https://github.com/somilsin/behaviorai-lovexai" },
+    link: {
+      label: "github.com/somilsin/behaviorai-lovexai ↗",
+      href: "https://github.com/somilsin/behaviorai-lovexai",
+    },
   },
   {
     role: "Deep Learning Research Assistant",
@@ -84,7 +85,10 @@ const EXPERIENCE = [
     points: [
       "Trained a customised Single Shot Detector with Feature Pyramid Networks for multi-scale perception in dense driving scenes — 55–75% mAP on the real-world WIRIN traffic dataset.",
     ],
-    link: { label: "github.com/somilsin/Object-Detection-using-SSD ↗", href: "https://github.com/somilsin/Object-Detection-using-SSD" },
+    link: {
+      label: "github.com/somilsin/Object-Detection-using-SSD ↗",
+      href: "https://github.com/somilsin/Object-Detection-using-SSD",
+    },
   },
 ];
 
@@ -257,7 +261,9 @@ function Index() {
         <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-6 md:px-12">
           <a href="#top" className="flex flex-col leading-none">
             <span className="serif-display text-2xl tracking-[0.35em]">SOMIL</span>
-            <span className="mt-1 eyebrow text-[color:var(--color-primary)]">AI · COMPUTER VISION · ROBOTICS</span>
+            <span className="mt-1 eyebrow text-[color:var(--color-primary)]">
+              AI · COMPUTER VISION · ROBOTICS
+            </span>
           </a>
           <nav className="hidden gap-10 md:flex">
             {NAV.map((n) => (
@@ -278,7 +284,10 @@ function Index() {
       </header>
 
       {/* Right side scroll dots */}
-      <nav className="fixed right-6 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-4 md:flex" aria-label="Section progress">
+      <nav
+        className="fixed right-6 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-4 md:flex"
+        aria-label="Section progress"
+      >
         {["top", ...NAV.map((n) => n.id)].map((id) => (
           <a
             key={id}
@@ -316,10 +325,11 @@ function Index() {
               className="reveal prose-editorial mt-10 max-w-[26rem] border-l border-[color:var(--color-border)] pl-6"
               data-reveal-delay="160"
             >
-              NeRF, Gaussian splatting and SLAM/SfM research at IISc Bangalore&rsquo;s Visual AI &amp; Learning Lab.
-              Full-Stack AI Engineer at Oracle Primavera Cloud, where my multi-agent LLM system autonomously triages
-              150–200 bugs a week. Published in IJISRT. Solo winner of the Softway LoveXAI hackathon — built and
-              defended an enterprise AI product in two hours.
+              NeRF, Gaussian splatting and SLAM/SfM research at IISc Bangalore&rsquo;s Visual AI
+              &amp; Learning Lab. Full-Stack AI Engineer at Oracle Primavera Cloud, where my
+              multi-agent LLM system autonomously triages 150–200 bugs a week. Published in IJISRT.
+              Solo winner of the Softway LoveXAI hackathon — built and defended an enterprise AI
+              product in two hours.
             </div>
 
             <div className="reveal mt-10 flex flex-col gap-3" data-reveal-delay="240">
@@ -362,7 +372,10 @@ function Index() {
               </a>
             </div>
 
-            <p className="reveal mt-10 text-sm text-[color:var(--color-foreground)]/60" data-reveal-delay="400">
+            <p
+              className="reveal mt-10 text-sm text-[color:var(--color-foreground)]/60"
+              data-reveal-delay="400"
+            >
               Bangalore, India · +91 991 690 6693
             </p>
           </div>
@@ -380,8 +393,12 @@ function Index() {
         <div className="mx-auto grid max-w-[1400px] gap-8 border-t border-[color:var(--color-border)] pt-10 sm:grid-cols-2 lg:grid-cols-4">
           {METRICS.map((m, i) => (
             <div key={m.value} className="reveal" data-reveal-delay={i * 90}>
-              <p className="serif-display text-4xl text-[color:var(--color-primary)] md:text-5xl">{m.value}</p>
-              <p className="mt-3 text-sm leading-relaxed text-[color:var(--color-foreground)]/70">{m.label}</p>
+              <p className="serif-display text-4xl text-[color:var(--color-primary)] md:text-5xl">
+                {m.value}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-[color:var(--color-foreground)]/70">
+                {m.label}
+              </p>
             </div>
           ))}
         </div>
@@ -393,11 +410,12 @@ function Index() {
       <section id="experience" className="relative px-6 py-24 md:px-12">
         <div className="mx-auto max-w-[1400px]">
           <h2 className="reveal serif-display max-w-4xl text-4xl leading-[1.02] md:text-6xl lg:text-7xl">
-            Research lab and <em className="text-[color:var(--color-primary)]">production</em>, at once.
+            Research lab and <em className="text-[color:var(--color-primary)]">production</em>, at
+            once.
           </h2>
           <p className="reveal prose-editorial mt-6 max-w-xl" data-reveal-delay="100">
-            3D perception research at IISc VAL. Multi-agent LLM infrastructure running inside a global enterprise
-            product at Oracle. Same engineer, both sides of the gap.
+            3D perception research at IISc VAL. Multi-agent LLM infrastructure running inside a
+            global enterprise product at Oracle. Same engineer, both sides of the gap.
           </p>
 
           <div className="mt-16 space-y-14">
@@ -446,7 +464,8 @@ function Index() {
             The <em className="text-[color:var(--color-primary)]">work</em> itself.
           </h2>
           <p className="reveal prose-editorial mt-6 max-w-xl" data-reveal-delay="100">
-            One peer-reviewed publication and an open GitHub — every claim below has code or a DOI behind it.
+            One peer-reviewed publication and an open GitHub — every claim below has code or a DOI
+            behind it.
           </p>
 
           <div className="mt-16 space-y-0">
@@ -456,7 +475,9 @@ function Index() {
                 className="reveal grid gap-8 border-t border-[color:var(--color-border)] py-10 md:grid-cols-12"
               >
                 <div className="md:col-span-2">
-                  <span className="serif-display text-5xl text-[color:var(--color-primary)]">{p.n}</span>
+                  <span className="serif-display text-5xl text-[color:var(--color-primary)]">
+                    {p.n}
+                  </span>
                 </div>
                 <div className="md:col-span-7">
                   <h3 className="serif-display text-2xl md:text-3xl">{p.title}</h3>
@@ -492,8 +513,14 @@ function Index() {
 
           <div className="mt-16 grid gap-10 md:grid-cols-2">
             {STACK.map((p, i) => (
-              <div key={p.n} className="reveal border-t border-[color:var(--color-border)] pt-8" data-reveal-delay={i * 80}>
-                <span className="serif-display text-5xl text-[color:var(--color-primary)]">{p.n}</span>
+              <div
+                key={p.n}
+                className="reveal border-t border-[color:var(--color-border)] pt-8"
+                data-reveal-delay={i * 80}
+              >
+                <span className="serif-display text-5xl text-[color:var(--color-primary)]">
+                  {p.n}
+                </span>
                 <h3 className="serif-display mt-6 text-2xl">{p.title}</h3>
                 <p className="prose-editorial mt-4">{p.body}</p>
               </div>
@@ -513,7 +540,10 @@ function Index() {
 
           <div className="mt-16 divide-y divide-[color:var(--color-border)]">
             {CREDENTIALS.map((c) => (
-              <div key={c.title} className="reveal flex flex-wrap items-baseline justify-between gap-4 py-7">
+              <div
+                key={c.title}
+                className="reveal flex flex-wrap items-baseline justify-between gap-4 py-7"
+              >
                 <h3 className="serif-display text-2xl md:text-3xl">{c.title}</h3>
                 <p className="eyebrow text-[color:var(--color-foreground)]/60">{c.meta}</p>
               </div>
@@ -531,16 +561,16 @@ function Index() {
 
       <SectionDivider numeral="VI" kicker="Let's talk" index="06" />
 
-
       {/* CONTACT */}
       <section id="contact" className="relative px-6 py-32 md:px-12">
         <div className="mx-auto max-w-[1400px]">
           <h2 className="reveal serif-display max-w-4xl text-4xl leading-[1.02] md:text-6xl lg:text-7xl">
-            Open to <em className="text-[color:var(--color-primary)]">computer vision, robotics</em> and AI engineering roles.
+            Open to <em className="text-[color:var(--color-primary)]">computer vision, robotics</em>{" "}
+            and AI engineering roles.
           </h2>
           <p className="reveal prose-editorial mt-6 max-w-xl" data-reveal-delay="100">
-            Building visual intelligence for embodied agents, or frontier LLM infrastructure. Either way — send a
-            note.
+            Building visual intelligence for embodied agents, or frontier LLM infrastructure. Either
+            way — send a note.
           </p>
 
           <div className="reveal mt-12 flex flex-col gap-3 sm:max-w-md" data-reveal-delay="200">
@@ -584,11 +614,21 @@ function Index() {
   );
 }
 
-function SectionDivider({ numeral, kicker, index }: { numeral: string; kicker: string; index: string }) {
+function SectionDivider({
+  numeral,
+  kicker,
+  index,
+}: {
+  numeral: string;
+  kicker: string;
+  index: string;
+}) {
   return (
     <div className="px-6 pt-24 md:px-12">
       <div className="mx-auto flex max-w-[1400px] items-center justify-between border-t border-[color:var(--color-border)] pt-6">
-        <p className="serif-display italic text-lg text-[color:var(--color-foreground)]/60">{numeral}</p>
+        <p className="serif-display italic text-lg text-[color:var(--color-foreground)]/60">
+          {numeral}
+        </p>
         <p className="eyebrow text-[color:var(--color-foreground)]/60">
           <span className="serif-display text-base not-italic tracking-normal text-[color:var(--color-foreground)]">
             SOMIL
