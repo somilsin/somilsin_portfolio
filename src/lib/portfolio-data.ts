@@ -20,7 +20,7 @@ export const chapters: Chapter[] = [
     entries: [
       {
         title: "IISc Bangalore — Computer Vision Research Assistant, VAL",
-        meta: "Sep 2026 — Present",
+        meta: "Sep 2026 — Present · Jul 2023 — Dec 2023",
         body: "Neural Radiance Fields with plenoptic functions modelling 7D scene representations for human-pose estimation — +25% reconstruction fidelity, validated on Blender, LLFF and DTU. SfM/SLAM camera calibration for 3D reconstruction with differentiable ray tracing at 12 fps; volumetric rendering and lightfield pipelines (1000+ LoC, PyTorch on Ubuntu). Reduced mean joint-position error 18% on out-of-distribution datasets using Gaussian splatting, supersampling and custom BVH acceleration structures.",
       },
       {

@@ -47,7 +47,7 @@ const EXPERIENCE = [
   {
     role: "Computer Vision Research Assistant",
     name: "IISc Bangalore — Visual AI & Learning Lab (VAL)",
-    tag: "Sep 2026 — Present",
+    tag: "Sep 2026 — Present · Jul 2023 — Dec 2023",
     points: [
       "Neural Radiance Fields with plenoptic functions modelling 7D scene representations for human-pose estimation — +25% reconstruction fidelity, validated on Blender, LLFF and DTU.",
       "SfM/SLAM camera calibration for 3D reconstruction with differentiable ray tracing at 12 fps real-time inference; volumetric rendering and lightfield pipelines (1000+ LoC, PyTorch/Ubuntu).",
