@@ -45,9 +45,9 @@ export const chapters: Chapter[] = [
     numeral: "II",
     title: "Publications & Projects",
     subtitle: "Chapter II",
-    status: "LIVE — 5 OF 5",
+    status: "LIVE — 7 OF 7",
     blurb:
-      "One peer-reviewed publication in IJISRT plus open-source work on GitHub: from-scratch transformers and LLMs, BehaviorAI, Indian ANPR, and SSD-based autonomous driving perception.",
+      "One peer-reviewed publication in IJISRT plus open-source work on GitHub: from-scratch deep learning, computer vision, transformers and LLMs, BehaviorAI, Indian ANPR, and SSD-based autonomous driving perception.",
     entries: [
       {
         title: "Object Detection, Classification & Tracking of Everyday Common Objects",
@@ -55,24 +55,34 @@ export const chapters: Chapter[] = [
         body: "GPU-accelerated segmentation and tracking pipeline (YOLOv4, TensorFlow, OpenCV) at sub-30ms latency; detection combined with dynamic cropping for 75–95% accuracy, handling edge-frame targets and occlusion.",
       },
       {
+        title: "Deep Learning & Computer Vision",
+        meta: "github.com/somilsin/Deep-Learning_Computer-Vision",
+        body: "From-scratch CMU, Stanford and MIT coursework: fully-connected and convolutional digit classifiers, CNN facial detection with a debiasing variational autoencoder (DB-VAE), and nnkit, a NumPy and SciPy neural network engine with hand-derived backward passes and no autograd.",
+      },
+      {
         title: "Transformers & Large Language Models",
         meta: "github.com/somilsin/Transformers_Large-Language-Models",
-        body: "From-scratch implementations of transformers and LLMs, documenting a progression through advanced machine learning concepts from Stanford and MIT curricula.",
+        body: "From-scratch implementations documenting a progression through advanced machine learning from Stanford, CMU and MIT curricula: character-level RNN/LSTM music generation and LoRA fine-tuning of a chat model with LLM-as-a-judge evaluation.",
       },
       {
         title: "BehaviorAI",
-        meta: "github.com/somilsin/behaviorai-lovexai · Prize-winning",
-        body: "AI behavioural-change engine built with Claude for the Softway LoveXAI Hackathon 2026.",
+        meta: "github.com/somilsin/behaviorai-lovexai · Top 5 winner",
+        body: "AI behavioural-change engine built with Claude for the Softway LoveXAI Hackathon 2026, one of 5 winners from 1,000+ applicants and 20 finalists.",
       },
       {
         title: "Indian ANPR",
         meta: "github.com/somilsin/Indian-ANPR",
-        body: "Automatic number plate recognition for Indian vehicles using pytesseract OCR, MySQL and Twilio — real-time plate detection, registration checks and SMS alerts.",
+        body: "Automatic number plate recognition for Indian vehicles using pytesseract OCR, MySQL and Twilio — plate extraction, owner, model and registration validity checks, and SMS alerts for expired or invalid registrations.",
       },
       {
         title: "Object Detection using SSD",
         meta: "github.com/somilsin/Object-Detection-using-SSD",
         body: "Customised Single Shot Detector for an automated self-driving car on the WIRIN dataset, integrated with the vehicle through a companion app.",
+      },
+      {
+        title: "Learning Archive",
+        meta: "github.com/somilsin/Learning-Archive",
+        body: "A curated archive of practice projects and academic explorations — continuous experimentation across programming and computer science.",
       },
     ],
   },

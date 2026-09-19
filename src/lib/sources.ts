@@ -54,7 +54,8 @@ export const SOURCES: SourceRef[] = [
     cv: { label: "CV — Experience § Oracle, Primavera Cloud", anchor: "#experience" },
   },
   {
-    claim: "BehaviorAI — winner, Softway LoveXAI Hackathon 2026, built solo in a 2-hour sprint.",
+    claim:
+      "BehaviorAI — top 5 winner of 1,000+ applicants, Softway LoveXAI Hackathon 2026, built solo in a 2-hour sprint.",
     section: "Work",
     repo: "somilsin/behaviorai-lovexai",
     repoLabel: "Source repository",
@@ -72,7 +73,15 @@ export const SOURCES: SourceRef[] = [
   },
   {
     claim:
-      "Transformers and LLMs implemented from scratch (attention, tokenisation, training loops).",
+      "Deep learning and computer vision implemented from scratch (CNNs, DB-VAE facial detection debiasing, nnkit engine with no autograd).",
+    section: "Work",
+    repo: "somilsin/Deep-Learning_Computer-Vision",
+    repoLabel: "Source repository",
+    cv: { label: "CV — Projects § Deep Learning & Computer Vision", anchor: "#work" },
+  },
+  {
+    claim:
+      "Transformers and LLMs implemented from scratch (RNN/LSTM music generation, LoRA fine-tuning with LLM-as-a-judge evaluation).",
     section: "Work",
     repo: "somilsin/Transformers_Large-Language-Models",
     repoLabel: "Source repository",
@@ -80,7 +89,7 @@ export const SOURCES: SourceRef[] = [
   },
   {
     claim:
-      "Indian ANPR — real-time plate recognition with pytesseract, MySQL registration checks, Twilio alerts.",
+      "Indian ANPR — plate recognition with pytesseract, MySQL registration checks, Twilio SMS alerts for invalid registrations.",
     section: "Work",
     repo: "somilsin/Indian-ANPR",
     repoLabel: "Source repository",
