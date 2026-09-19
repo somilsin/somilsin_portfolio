@@ -42,14 +42,20 @@ export default function ParticleHead() {
     try {
       const raw = localStorage.getItem("fx:particle");
       if (raw) return { ...DEFAULTS, ...JSON.parse(raw) };
-    } catch {}
+    } catch {
+      // Storage unavailable or corrupt JSON: fall back to defaults.
+    }
     const show = new URLSearchParams(window.location.search).has("fx");
     return { ...DEFAULTS, showPanel: show };
   });
   const fxRef = useRef(fx);
   useEffect(() => {
     fxRef.current = fx;
-    try { localStorage.setItem("fx:particle", JSON.stringify(fx)); } catch {}
+    try {
+      localStorage.setItem("fx:particle", JSON.stringify(fx));
+    } catch {
+      // Storage unavailable (e.g. private mode): settings just won't persist.
+    }
   }, [fx]);
   const [stats, setStats] = useState<DebugStats>({ fps: 0, adapt: 1, running: true, reason: "running" });
   const statsRef = useRef(stats);
