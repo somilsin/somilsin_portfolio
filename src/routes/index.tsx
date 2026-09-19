@@ -92,7 +92,17 @@ const EXPERIENCE = [
   },
 ];
 
-const WORK = [
+type WorkItem = {
+  n: string;
+  title: string;
+  meta: string;
+  body: string;
+  href: string;
+  hrefLabel: string;
+  secondary?: { href: string; label: string };
+};
+
+const WORK: WorkItem[] = [
   {
     n: "01",
     title: "Object Detection, Classification & Tracking of Everyday Common Objects",
@@ -100,6 +110,10 @@ const WORK = [
     body: "GPU-accelerated segmentation and tracking pipeline (YOLOv4, TensorFlow, OpenCV) at sub-30ms latency. Detection combined with dynamic cropping for 75–95% accuracy, handling edge-frame targets and occlusion.",
     href: "https://doi.org/10.5281/zenodo.8330641",
     hrefLabel: "doi.org/10.5281/zenodo.8330641 ↗",
+    secondary: {
+      href: "https://github.com/somilsin/Object-Tracking-with-Boundary-edge-detection-using-yolov4",
+      label: "github.com/somilsin/Object-Tracking-with-Boundary-edge-detection-using-yolov4 ↗",
+    },
   },
   {
     n: "02",
@@ -503,6 +517,16 @@ function Index() {
                   >
                     {p.hrefLabel}
                   </a>
+                  {p.secondary && (
+                    <a
+                      href={p.secondary.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-3 block break-all eyebrow text-[color:var(--color-primary)] transition-opacity hover:opacity-70"
+                    >
+                      {p.secondary.label}
+                    </a>
+                  )}
                 </div>
               </article>
             ))}
